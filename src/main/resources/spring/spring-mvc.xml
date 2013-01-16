@@ -13,18 +13,17 @@
 
 	<context:annotation-config />
 	<mvc:annotation-driven />
-  	<mvc:default-servlet-handler/>
-    <mvc:resources mapping="/static/**" location="/static/"/>
+  	
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
     
     <context:component-scan base-package="org.kercheval" />
+    <mvc:default-servlet-handler />
     
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix">
-            <value>/WEB-INF/jsp/</value>
-        </property>
-        <property name="suffix">
-            <value>.jsp</value>
-        </property>
-    </bean>
+    <mvc:resources mapping="/static/**" location="/static/" />
+    <mvc:view-controller path="/" view-name="index" />
     
 </beans>

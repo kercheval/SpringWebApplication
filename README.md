@@ -7,8 +7,17 @@ application in spring MVC.  There is no service or dao layer here,
 only a JSP and controller front end with CSS/JS presentation layer
 support.
 
-This project demonstrates the use of gradle and CM plugins for
-release as well as local maven repository support.
+This project demonstrates the following:
+
+- Use of Gradle to build a Spring web application
+- Configuration of spring MVC
+- Use of HTML/Static content (.html, .css, .js)
+- Use of annotated spring controllers
+- Demonstration of view return to access JSP pages
+- Use of MVC model to insert data in JSP output
+- Use of JSP to build component based pages
+- Creation of JSP tags and libraries to create reusable JSP objects
+- Loading configuration properties file from the classpath
 
 ---
 

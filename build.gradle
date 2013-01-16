@@ -100,6 +100,11 @@ dependencies {
     compile "org.springframework:spring-jdbc:${springVersion}"
 
     //
+    // JSP/JSTL support
+    //
+    providedCompile 'javax.servlet.jsp:javax.servlet.jsp-api:2.2.1'
+
+    //
     // Trace and multiprocess support library
     //
     compile ('com.google.code.tempus-fugit:tempus-fugit:1.1') {
