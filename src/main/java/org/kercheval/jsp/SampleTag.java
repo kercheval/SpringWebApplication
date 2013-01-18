@@ -38,5 +38,4 @@ public class SampleTag
 
         return BodyTag.EVAL_BODY_BUFFERED;
     }
-
 }

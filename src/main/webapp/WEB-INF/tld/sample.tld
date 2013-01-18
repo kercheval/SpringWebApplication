@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_5.xsd"
-	version="2.2.1">
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
 
 	<description>Sample Tag Library</description>
 	<tlib-version>1.0</tlib-version>
 	<short-name>Sample</short-name>
 	<uri>http://kercheval.org/sample</uri>
 
-    <function>
-      <name>sampleFunction</name>
-      <function-class>org.kercheval.jsp.SampleUtil</function-class>
-      <function-signature>String sampleFunction(java.lang.String)</function-signature>
-    </function>
+	<function>
+		<description>Sample function for Spring Web Application</description>
+		<name>sampleFunction</name>
+		<function-class>org.kercheval.jsp.SampleUtil</function-class>
+		<function-signature>String sampleFunction(java.lang.String)
+		</function-signature>
+	</function>
+
+	<tag>
+		<description>Sample tag for Spring Web Application</description>
+		<name>sampleTag</name>
+		<tag-class>org.kercheval.jsp.SampleTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>sampleAttribute</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
 
 </taglib>
