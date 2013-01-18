@@ -9,16 +9,6 @@
 	<short-name>Sample</short-name>
 	<uri>http://kercheval.org/sample</uri>
 
-    <tag>
-        <name>sampleTag</name>
-        <tag-class>org.kercheval.jsp.SampleTag</tag-class>
-        <body-content>JSP</body-content>
-        <attribute>
-            <name>sampleAttribute</name>
-            <required>true</required>
-        </attribute>
-    </tag>
-    
     <function>
       <name>sampleFunction</name>
       <function-class>org.kercheval.jsp.SampleUtil</function-class>
