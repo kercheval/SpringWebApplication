@@ -18,6 +18,7 @@ This project demonstrates the following:
 - Use of JSP to build component based pages
 - Creation of JSP tags and libraries to create reusable JSP objects
 - Loading configuration properties file from the classpath
+- Use of WRO4J in spring environment to optimize CSS and JS loading
 
 ---
 
