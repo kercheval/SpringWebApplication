@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Index File for Web Application</title>
-        <script src='static/js/jquery-1.8.3.min.js' type='text/javascript'></script>
-        <link href='static/css/common.css' media='screen' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="/wro/all.css"></link>
+        <script type="text/javascript" src="wro/all.js"></script>
     </head>
     <body>
        <h1>Spring Web Application</h1>

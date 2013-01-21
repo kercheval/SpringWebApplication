@@ -11,5 +11,13 @@
 
     <context:annotation-config />
     <context:component-scan base-package="org.kercheval" />
+
+	<bean id="wroFilter" class="ro.isdc.wro.http.ConfigurableWroFilter">
+	  <property name="properties" ref="wroProperties"/>
+	</bean>
+	
+	<bean id="wroProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">  
+	    <property name="location" value="classpath:wro.properties" />  
+	</bean>  
     
 </beans>

@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Sample JSP file for Web Application</title>
-        <script src='static/js/jquery-1.8.3.min.js' type='text/javascript'></script>
-        <link href='static/css/common.css' media='screen' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="wro/all.css"></link>
+        <script type="text/javascript" src="wro/all.js"></script>
     </head>
     <jsp:include page="/WEB-INF/jsp/body.jsp" />
 </html>

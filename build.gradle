@@ -112,6 +112,11 @@ dependencies {
     }
 
     //
+    // Web resource optmizer (http://code.google.com/p/wro4j/)
+    //
+    compile "ro.isdc.wro4j:wro4j-core:1.6.2"
+
+    //
     // Testing
     //
     testCompile 'junit:junit:4.+'
