@@ -3,4 +3,7 @@
     <css>/static/css/*.css</css>
     <js>/static/js/*.js</js>
   </group>
+  <group name="index">
+    <css>/static/css/*.css</css>
+  </group>
 </groups> 

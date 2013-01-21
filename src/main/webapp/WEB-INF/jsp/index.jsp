@@ -2,8 +2,7 @@
 <html>
     <head>
         <title>Index File for Web Application</title>
-        <link rel="stylesheet" type="text/css" href="/wro/all.css"></link>
-        <script type="text/javascript" src="wro/all.js"></script>
+        <link rel="stylesheet" type="text/css" href="/wro/index.css"></link>
     </head>
     <body>
        <h1>Spring Web Application</h1>
