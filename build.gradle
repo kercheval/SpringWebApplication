@@ -85,6 +85,7 @@ jettyRun {
 // Project specific dependencies
 //    
 def springVersion = '3.1.0.RELEASE'
+def jacksonVersion = '1.9.9'
 dependencies {
     //
     // Basic logger facade
@@ -98,6 +99,11 @@ dependencies {
     compile "org.springframework:spring-web:${springVersion}"
     compile "org.springframework:spring-webmvc:${springVersion}"
     compile "org.springframework:spring-jdbc:${springVersion}"
+
+    //
+    // Jackson for JSON return
+    //
+    runtime "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
 
     //
     // JSP/JSTL support

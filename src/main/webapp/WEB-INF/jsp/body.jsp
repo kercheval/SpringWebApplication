@@ -8,4 +8,5 @@
    <p>This is a call to the TLD function sampleFunction(String) and it returns: ${sample:sampleFunction("TestString")}</p>
    <p>The div below uses the tags file sampleDiv.tag</p>
    <tags:sampleDiv bgcolor="#dddddd" />
+   <p>This <a href="sample.json">link</a> will show sample JSON</p>
 </body>
