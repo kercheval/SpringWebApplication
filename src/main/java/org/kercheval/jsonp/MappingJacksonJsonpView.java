@@ -5,7 +5,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
 import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
 
 public class MappingJacksonJsonpView
@@ -14,13 +13,9 @@ public class MappingJacksonJsonpView
     @SuppressWarnings("hiding")
     public static final String DEFAULT_CONTENT_TYPE = "application/javascript";
 
-    Logger log = Logger.getLogger(this.getClass().getCanonicalName());
-
     @Override
     public String getContentType()
     {
-        log.info("MappingJacksonJsonpView.getContentType() called");
-
         return DEFAULT_CONTENT_TYPE;
     }
 
@@ -34,8 +29,6 @@ public class MappingJacksonJsonpView
         final HttpServletResponse response)
         throws Exception
     {
-        log.info("MappingJacksonJsonpView.render() called");
-
         if ("GET".equals(request.getMethod().toUpperCase()))
         {
             @SuppressWarnings("unchecked")
