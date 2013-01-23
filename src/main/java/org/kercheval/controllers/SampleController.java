@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SampleController
@@ -22,9 +21,21 @@ public class SampleController
     }
 
     @RequestMapping(value = "sample.json", method=RequestMethod.GET)
-    public @ResponseBody Map<String, String> getJSON() {
+    public Map<String, String> getJSON() {
+        log.info("sample.json called");
+
         final Map<String, String> map = new HashMap<String, String>();
         map.put("myString", "This is a string response and should be valid JSON");
+
+        return map;
+    }
+
+    @RequestMapping(value = "sample.jsonp", method=RequestMethod.GET, produces = {"application/javascript"})
+    public Map<String, String> getJSONP() {
+        log.info("sample.jsonp called");
+
+        final Map<String, String> map = new HashMap<String, String>();
+        map.put("myString", "This is a string response and should be valid JSONP");
 
         return map;
     }

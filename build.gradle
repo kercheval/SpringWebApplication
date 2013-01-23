@@ -108,6 +108,7 @@ dependencies {
     //
     // JSP/JSTL support
     //
+    providedCompile 'javax.servlet:servlet-api:2.5'
     providedCompile 'javax.servlet.jsp:javax.servlet.jsp-api:2.2.1'
 
     //

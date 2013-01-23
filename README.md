@@ -11,15 +11,16 @@ This project demonstrates the following:
 
 - Use of Gradle to build a Spring web application
 - Configuration of spring MVC
-- Use of HTML/Static content (.html, .css, .js)
 - Use of annotated spring controllers
 - Demonstration of view return to access JSP pages
 - Use of MVC model to insert data in JSP output
 - Use of JSP to build component based pages
 - Creation of JSP tags and libraries to create reusable JSP objects
-- Loading configuration properties file from the classpath
+- Use of HTML/Static content (.html, .css, .js)
 - Use of WRO4J in spring environment to optimize CSS and JS loading
 - Return of JSON content from a controller
+- Client call for and return of JSONP content from a controller
+- Loading configuration properties file from the classpath
 
 ---
 

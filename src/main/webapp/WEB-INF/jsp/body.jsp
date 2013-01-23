@@ -9,4 +9,23 @@
    <p>The div below uses the tags file sampleDiv.tag</p>
    <tags:sampleDiv bgcolor="#dddddd" />
    <p>This <a href="sample.json">link</a> will show sample JSON</p>
+   <p>Click <span onclick="doClick()"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to make JSONP call</p>
+  <script language="javascript" type="text/javascript">
+  function myCallback(data) {
+	  alert("SuccessCallback occurred: " + data["myString"]);
+  }
+
+  function myFailCallback(jqXHR, textStatus) {
+      alert("Fail Callback occurred: " + textStatus);
+  }
+  
+  function doClick() {
+	  $.ajax({
+		  dataType: "jsonp",
+		  url: "sample.jsonp"
+	  })
+	  .done(myCallback)
+	  .fail(myFailCallback)
+  }
+  </script>
 </body>
