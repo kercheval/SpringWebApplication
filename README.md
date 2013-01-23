@@ -21,6 +21,7 @@ This project demonstrates the following:
 - Return of JSON content from a controller
 - Client call for and return of JSONP content from a controller
 - Loading configuration properties file from the classpath
+- The use of JUNIT and JMockit for Unit tests
 
 ---
 
