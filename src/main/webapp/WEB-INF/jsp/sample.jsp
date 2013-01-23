@@ -5,5 +5,5 @@
         <link rel="stylesheet" type="text/css" href="wro/all.css"></link>
         <script type="text/javascript" src="wro/all.js"></script>
     </head>
-    <jsp:include page="/WEB-INF/jsp/body.jsp" />
+    <jsp:include page="/WEB-INF/jsp/body.jspf" />
 </html>
