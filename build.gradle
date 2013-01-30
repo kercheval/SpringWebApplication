@@ -218,7 +218,7 @@ buildscript {
 		mavenRepo url: 'http://kercheval.org/mvn-repo/releases'
     }
     dependencies {
-        classpath 'org.kercheval:GradleCMPlugin:1.10-20121119.105437'
+        classpath 'org.kercheval:GradleCMPlugin:1.11-20130129.143219'
     }
 }
 
@@ -227,7 +227,7 @@ buildscript {
 // Gradle wrapper
 //
 task wrapper(type: Wrapper) {
-	gradleVersion = '1.3'
+	gradleVersion = '1.4'
 }
 
 
