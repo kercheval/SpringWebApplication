@@ -18,6 +18,7 @@ This project demonstrates the following:
 - Creation of JSP tags and libraries to create reusable JSP objects
 - Use of HTML/Static content (.html, .css, .js)
 - Use of WRO4J in spring environment to optimize CSS and JS loading
+- Use of URL parameters for RESTful interfaces
 - Return of JSON content from a controller
 - Client call for and return of JSONP content from a controller
 - Loading configuration properties file from the classpath
