@@ -61,21 +61,31 @@ public class Config
         return properties;
     }
 
+    @SuppressWarnings("resource")
     private Properties getPropertiesFromClasspath(final String propFileName)
         throws IOException
     {
         final Properties props = new Properties();
-        final InputStream inputStream = Thread.currentThread().getContextClassLoader()
-            .getResourceAsStream(propFileName);
+        InputStream inputStream = null;
+        try {
+            inputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream(propFileName);
 
-        if (inputStream == null)
-        {
-            throw new FileNotFoundException("property file '" + propFileName
-                + "' not found in the classpath");
+            if (inputStream == null)
+            {
+                throw new FileNotFoundException("property file '" + propFileName
+                    + "' not found in the classpath");
+            }
+
+            props.load(inputStream);
         }
-
-        props.load(inputStream);
-
+        finally
+        {
+            if (null != inputStream)
+            {
+                inputStream.close();
+            }
+        }
         logPropertyLoad(props);
 
         return props;

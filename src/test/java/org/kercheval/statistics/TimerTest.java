@@ -33,7 +33,9 @@ public class TimerTest
     {
         final Logger testLogger = new MockUp<Logger>()
         {
-            @SuppressWarnings("synthetic-access")
+            @SuppressWarnings({
+                "synthetic-access", "unused"
+            })
             @Mock
             public void debug(final String msg)
             {
