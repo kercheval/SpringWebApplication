@@ -8,7 +8,7 @@ import org.junit.Test;
 public class ConfigTest
 {
     private static String TEST_PROPERTY = "TestProperty";
-    
+
     public static Config getEmptyConfig()
     {
         final Config config = new Config();

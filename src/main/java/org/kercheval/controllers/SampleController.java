@@ -3,7 +3,9 @@ package org.kercheval.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.kercheval.statistics.Timer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +15,29 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SampleController
 {
-    Logger log = Logger.getLogger(this.getClass().getCanonicalName());
+    Logger log = LoggerFactory.getLogger(this.getClass());
+
+    private final Timer controllerTimer = Timer.getTimer("Service - " + getName());
+
+    public String getName()
+    {
+        return this.getClass().getName();
+    }
 
     @RequestMapping(
         value = "jspsample",
         method = RequestMethod.GET)
     public String sample()
     {
-        log.info("jspsample called");
-        return "sample";
+        final Timer.TimerState timerState = controllerTimer.start();
+        try
+        {
+            return "sample";
+        }
+        finally
+        {
+            timerState.stopAndDebugLog(log, getName(), ".sample() called");
+        }
     }
 
     @RequestMapping(
@@ -29,12 +45,18 @@ public class SampleController
         method = RequestMethod.GET)
     public Map<String, String> getJSON()
     {
-        log.info("sample.json called");
+        final Timer.TimerState timerState = controllerTimer.start();
+        try
+        {
+            final Map<String, String> map = new HashMap<String, String>();
+            map.put("myString", "This is a string response and should be valid JSON");
 
-        final Map<String, String> map = new HashMap<String, String>();
-        map.put("myString", "This is a string response and should be valid JSON");
-
-        return map;
+            return map;
+        }
+        finally
+        {
+            timerState.stopAndDebugLog(log, getName(), ".getJSON() called");
+        }
     }
 
     @RequestMapping(
@@ -46,12 +68,18 @@ public class SampleController
         })
     public Map<String, String> getJSONP()
     {
-        log.info("sample.jsonp called");
+        final Timer.TimerState timerState = controllerTimer.start();
+        try
+        {
+            final Map<String, String> map = new HashMap<String, String>();
+            map.put("myString", "This is a string response and should be valid JSONP");
 
-        final Map<String, String> map = new HashMap<String, String>();
-        map.put("myString", "This is a string response and should be valid JSONP");
-
-        return map;
+            return map;
+        }
+        finally
+        {
+            timerState.stopAndDebugLog(log, getName(), ".getJSONP() called");
+        }
     }
 
     @RequestMapping(
@@ -60,8 +88,15 @@ public class SampleController
     public @ResponseBody
     String sampleRestOneParam(@PathVariable final String firstParam)
     {
-        log.info("sampleRestOneParam called");
-        return "First parameter: " + firstParam;
+        final Timer.TimerState timerState = controllerTimer.start();
+        try
+        {
+            return "First parameter: " + firstParam;
+        }
+        finally
+        {
+            timerState.stopAndDebugLog(log, getName(), ".sampleRestOneParam() called");
+        }
     }
 
     @RequestMapping(
@@ -70,7 +105,14 @@ public class SampleController
     public @ResponseBody
     String sampleRestTwoParam(@PathVariable final String firstParam, @PathVariable final String secondParam)
     {
-        log.info("sampleRestTwoParam called");
-        return "First parameter: " + firstParam + ", Second parameter: " + secondParam;
+        final Timer.TimerState timerState = controllerTimer.start();
+        try
+        {
+            return "First parameter: " + firstParam + ", Second parameter: " + secondParam;
+        }
+        finally
+        {
+            timerState.stopAndDebugLog(log, getName(), ".sampleRestTwoParam() called");
+        }
     }
 }

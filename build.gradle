@@ -107,6 +107,11 @@ dependencies {
     runtime "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
 
     //
+    // Swagger (https://developers.helloreverb.com/swagger/)
+    //
+    compile ('com.wordnik:swagger-jaxrs_2.9.1:1.1.0')
+
+    //
     // JSP/JSTL support
     //
     providedCompile 'javax.servlet:servlet-api:2.5'

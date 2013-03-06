@@ -10,6 +10,13 @@
    <tags:sampleDiv bgcolor="#dddddd" />
    <p>This <a href="sample.json">link</a> will show sample JSON</p>
    <p>Click <span onclick="doClick()"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to make JSONP call</p>
+   <br/>
+   <p>Click <span onclick="getStat('timers')"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to get timers statistics</p>
+   <p>Click <span onclick="getStat('counters')"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to get counter statistics</p>
+   <p>Click <span onclick="getStat('memory')"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to get memory statistics</p>
+   <p>Click <span onclick="getStat('host')"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to get host statistics</p>
+   <p>Click <span onclick="getStat('system')"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to get system statistics</p>
+   <p>Click <span onclick="getStat('threads')"><strong>&gt;&gt;HERE&lt;&lt;</strong></span> to get threads statistics</p>
   <script language="javascript" type="text/javascript">
   function myCallback(data) {
 	  alert("SuccessCallback occurred: " + data["myString"]);
@@ -26,6 +33,23 @@
 	  })
 	  .done(myCallback)
 	  .fail(myFailCallback)
+  }
+
+  
+  function statCallback(data) {
+      alert("Statistic returned: \n\n" + JSON.stringify(data));
+  }
+
+  function statFailCallback(jqXHR, textStatus) {
+      alert("Statistics failure callback occurred: " + textStatus);
+  }
+  
+  function getStat(type) {
+      $.ajax({
+          url: "statistics/" + type 
+      })
+      .done(statCallback)
+      .fail(statFailCallback)
   }
   </script>
 </body>
