@@ -130,6 +130,11 @@ dependencies {
     compile "ro.isdc.wro4j:wro4j-core:1.6.2"
 
     //
+    // kercheval.org service utility classes
+    //
+    compile 'org.kercheval:SpringWebServiceUtil:1.0-20130307.090030'
+
+    //
     // Testing
     //
     testCompile 'junit:junit:4.+'
@@ -144,6 +149,7 @@ allprojects {
     //
     repositories {
         mavenCentral()
+		mavenRepo url: 'http://kercheval.org/mvn-repo/releases'
     }
 
 

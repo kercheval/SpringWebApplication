@@ -19,7 +19,7 @@ build
 gradle-app.setting
 
 # Custom configuration files and static content
-/dev/buildinfo.properties
+dev/
 
 # Eclipse files
 .classpath
