@@ -107,11 +107,6 @@ dependencies {
     runtime "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
 
     //
-    // Swagger (https://developers.helloreverb.com/swagger/)
-    //
-    compile ('com.wordnik:swagger-jaxrs_2.9.1:1.1.0')
-
-    //
     // JSP/JSTL support
     //
     providedCompile 'javax.servlet:servlet-api:2.5'
@@ -132,7 +127,7 @@ dependencies {
     //
     // kercheval.org service utility classes
     //
-    compile 'org.kercheval:SpringWebServiceUtil:+'
+    compile 'org.kercheval:SpringWebServiceUtil:1.11-20130703.085157'
 
     //
     // Testing
