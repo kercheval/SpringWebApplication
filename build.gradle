@@ -16,22 +16,22 @@ project.ext {
 
 
 //
-// Normal dev builds will typically get SNAPSHOT versions, the release builds get full 
+// Normal dev builds will typically get SNAPSHOT versions, the release builds get full
 // maven style versions.  The project variable buildMajorVersion must be set in the base
 // build.gradle file.
 //
 buildversion {
     doLast {
         //
-        // Set the pattern after the tags have been used to set the initial 
-        // values.  Release gets the default pattern of the maven default 
+        // Set the pattern after the tags have been used to set the initial
+        // values.  Release gets the default pattern of the maven default
         //
         def branchName = buildvcs.getBranchName()
         if (branchName != 'release' &&
             !project.hasProperty('noSnapshot')) {
-            version.setPattern("%M%.%m%-SNAPSHOT") 
+            version.setPattern("%M%.%m%-SNAPSHOT")
         }
-        version.updateMajor(new Integer(buildMajorVersion)) 
+        version.updateMajor(new Integer(buildMajorVersion))
         println("Currently working on sources for " + version);
 
         //
@@ -63,14 +63,14 @@ task copyConfig(type: Copy) {
     ext.destDir = new File(buildDir, 'classes/main')
     inputs.file srcFile
     outputs.dir destDir
-    from srcFile 
+    from srcFile
     into destDir
 }
 war.dependsOn copyConfig
 
 
 //
-// Jetty configuration for war runtime 
+// Jetty configuration for war runtime
 //
 apply plugin: 'jetty'
 jettyRun {
@@ -84,7 +84,7 @@ jettyRun {
 
 //
 // Project specific dependencies
-//    
+//
 def springVersion = '3.1.0.RELEASE'
 def jacksonVersion = '1.9.9'
 dependencies {
@@ -187,20 +187,20 @@ allprojects {
         repositories {
             mavenDeployer {
                 //
-                // Note this cute little bit of indirection.  The upload target will place the repository 
-                // files into a local github repository that is at the same level as the root of this 
+                // Note this cute little bit of indirection.  The upload target will place the repository
+                // files into a local github repository that is at the same level as the root of this
                 // project.  I have cloned my maven repository into that location so that these line up
-                // correctly.  This allows me to validate the release binaries and commit them as a 
+                // correctly.  This allows me to validate the release binaries and commit them as a
                 // seperate step.  If I had nexus deployed and was using CI for this project, this repository
                 // reference would be pointing directly at that instead.
                 //
                 repository(url: "file://${rootDir}/../mvn-repo/releases")
 
                 //
-                // Note that this repository will be used ONLY if the 
+                // Note that this repository will be used ONLY if the
                 // version ends with 'SNAPSHOT'.
                 //
-                snapshotRepository(url: "file://${rootDir}/../mvn-repo/snapshots") 
+                snapshotRepository(url: "file://${rootDir}/../mvn-repo/snapshots")
                 pom.project {
                     licenses {
                         license {
@@ -227,13 +227,3 @@ buildscript {
         classpath 'org.kercheval:GradleCMPlugin:1.14-20130611.134348'
     }
 }
-
-
-//
-// Gradle wrapper
-//
-task wrapper(type: Wrapper) {
-	gradleVersion = '1.6'
-}
-
-
