@@ -4,8 +4,8 @@
     xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     id="WebApp_ID" version="2.5">
-    
-	<display-name>Spring Web Application</display-name>
+
+	<display-name>Spring Web Application @BUILD_VERSION_STAMP@</display-name>
 
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
@@ -32,7 +32,7 @@
 	    <servlet-name>spring-mvc</servlet-name>
 	    <url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<filter>
 	  <filter-name>WebResourceOptimizer</filter-name>
 	  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -45,10 +45,10 @@
 	    <param-value>true</param-value>
 	  </init-param>
 	</filter>
-	
+
 	<filter-mapping>
 	  <filter-name>WebResourceOptimizer</filter-name>
 	  <url-pattern>/wro/*</url-pattern>
 	</filter-mapping>
-	
+
 </web-app>

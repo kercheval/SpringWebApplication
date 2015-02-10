@@ -54,6 +54,22 @@ buildinfo {
 }
 
 
+war {
+    //
+    // Do inline version stamp replacement
+    //
+    eachFile {
+        if (it.name.contains("web.xml")) {
+            it.filter(org.apache.tools.ant.filters.ReplaceTokens,
+                tokens: [
+                    'BUILD_VERSION_STAMP': version
+                ]
+            )
+        }
+    }
+}
+
+
 //
 // Handle the properties file to ensure it is placed on the classpath
 //
